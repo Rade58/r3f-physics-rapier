@@ -21,3 +21,17 @@ pnpm add -D r3f-perf @types/three
 ---
 
 ---
+
+# Learn from here
+
+<https://rapier.rs/docs/user_guides/javascript/getting_started_js>
+
+<https://rapier.rs/docs/api/javascript/JavaScript3D/>
+
+# Examples
+
+<https://pmndrs.github.io/react-three-rapier/>
+
+Searsh "rapier" here:
+
+<https://r3f.docs.pmnd.rs/getting-started/examples>
