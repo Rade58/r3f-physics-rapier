@@ -56,14 +56,22 @@ export function Experience() {
   useFrame(({ clock }, delta) => {
     const elapsed = clock.getElapsedTime();
 
-    const eulerRotation = new Euler(0, elapsed, 0);
+    const eulerRotation = new Euler(0, elapsed /* * 5 */, 0);
     const quoternionRotation = new Quaternion();
     quoternionRotation.setFromEuler(eulerRotation);
+
+    const angle = elapsed * 0.5;
 
     if (twisterRef.current) {
       // Uses Quaternion way of rotation
 
       twisterRef.current.setNextKinematicRotation(quoternionRotation);
+
+      twisterRef.current.setNextKinematicTranslation({
+        x: Math.cos(angle) * 2,
+        y: -0.8, // same position by y since we want to touch the floor
+        z: Math.sin(angle) * 2,
+      });
     }
   });
   // ------------------------------------------------------------
