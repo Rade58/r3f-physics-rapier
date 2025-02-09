@@ -44,8 +44,19 @@ export function Experience() {
         true
       );
 
-      cubeBodyRef.current.applyTorqueImpulse(
+      // rotate it
+      /* cubeBodyRef.current.applyTorqueImpulse(
         { x: 0, y: Math.PI * 0.3, z: 0 },
+        true
+      ); */
+
+      // or if you want to rotate it randomly
+      cubeBodyRef.current.applyTorqueImpulse(
+        {
+          x: Math.random() * 10,
+          y: Math.random() * 10,
+          z: Math.random() * 10,
+        },
         true
       );
     }
