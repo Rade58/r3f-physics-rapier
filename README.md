@@ -274,3 +274,10 @@ difference between them is how we update them
 • For the kinematicPosition, we provide the next position and it'll update the object velocity accordingly
 
 • For the kinematicVelocity, we provide the velocity directly
+
+The kinematic object has two important functions
+`setNextKinematicTranslation` to move the object, and `setNextKinematicRotation` to rotate the object
+
+in our example we will use useFrame
+
+we will create threejs Euler and Quaternion, and send that Quoterninon to `setNextKinematicRotation` call

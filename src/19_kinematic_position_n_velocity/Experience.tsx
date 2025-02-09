@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-// import { useFrame } from "@react-three/fiber";
+import { useFrame } from "@react-three/fiber";
 
 import { OrbitControls /* , Stage */ } from "@react-three/drei";
 
@@ -16,10 +16,11 @@ import {
   CuboidCollider,
 } from "@react-three/rapier";
 import { ThreeEvent } from "@react-three/fiber";
-import { Vector3 } from "three";
+import { Euler, Quaternion, Vector3 } from "three";
 
 export function Experience() {
   const cubeBodyRef = useRef<RapierRigidBody>(null);
+  const twisterRef = useRef<RapierRigidBody>(null);
 
   // const someControls = useControls("_", { test: 1 });
 
@@ -52,6 +53,22 @@ export function Experience() {
   // ------------------------------------------------------------
   // ------------------------------------------------------------
 
+  useFrame(({ clock }, delta) => {
+    const elapsed = clock.getElapsedTime();
+
+    const eulerRotation = new Euler(0, elapsed, 0);
+    const quoternionRotation = new Quaternion();
+    quoternionRotation.setFromEuler(eulerRotation);
+
+    if (twisterRef.current) {
+      // Uses Quaternion way of rotation
+
+      twisterRef.current.setNextKinematicRotation(quoternionRotation);
+    }
+  });
+  // ------------------------------------------------------------
+  // ------------------------------------------------------------
+
   return (
     <>
       <Perf position="top-left" />
@@ -75,7 +92,7 @@ export function Experience() {
           colliders="ball"
           // gravityScale={-0.2}
         >
-          <mesh position={[-2, 8, 0]} castShadow>
+          <mesh position={[-2, 0, 0]} castShadow>
             <sphereGeometry args={[1, 16, 16]} />
             <meshStandardMaterial args={[{ color: "orange" }]} />
           </mesh>
@@ -88,7 +105,7 @@ export function Experience() {
           friction={0.7}
           //
         >
-          <mesh castShadow position={[3, 3, 0]} onClick={clickEventHandler}>
+          <mesh castShadow position={[1.5, 0, 0]} onClick={clickEventHandler}>
             <boxGeometry args={[1, 1, 1]} />
             <meshStandardMaterial color="mediumpurple" />
           </mesh>
@@ -100,6 +117,7 @@ export function Experience() {
           friction={0}
           position={[0, -0.8, 0]}
           type="kinematicPosition"
+          ref={twisterRef}
         >
           <mesh castShadow>
             <boxGeometry args={[0.4, 0.4, 3]} />
