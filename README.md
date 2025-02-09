@@ -44,6 +44,8 @@ Searsh "rapier" here:
 
 # Physics and RigidBody taga
 
+We nest our meshes in Physics tag and we wrap our floor mesh in fixed RigidBody and for example we wrap sphere mesh in dynamic RigidBody
+
 - We don't have to update the physics in each frame
 - Three.js objects are automatically associated with the corresponding RigidBody Surrounding them
 - React Three Rapier creates a physics shape matching the Three.js objects
