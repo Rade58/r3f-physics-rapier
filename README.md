@@ -89,10 +89,19 @@ just set up `colliders="ball"` on RigidBody
 
 # Hull collider
 
+`colliders="hull"`
+
 It's like putting elastic membrane around object. We tested this with torus
 
 # Trimesh collider
 
+`colliders="trimesh"`
+
 hull is sometimes not good enough, because "elastic thing" doesn't follow crevice for example
 
-this is visible with torus
+this is visible with torus and a ball, ball will fall inside torus crevice
+
+**But this is bad for performances, and you shoud avoid using it with rigid bodies that have `type="dynamic"`**
+
+Colliders generated with a trimesh are empty on the inside and it makes collision detection more complicated and prone to bugs
+A fast object might get through the trimesh or end up stuck on its surface
