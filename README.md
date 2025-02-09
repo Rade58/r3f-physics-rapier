@@ -76,3 +76,15 @@ cuboids are addaptable (you will see this if you change the scale of the mesh, y
 We can put multiple meshes inside one RigidBody tag
 
 try putting cube and sphere from our example, with debug enabled
+
+# For better visualization
+
+Go to <https://bruno-simon.com/#debug> to see all colliders on his website
+
+just move car and in lil gui you will see physics; there you can check `modelsVisible`; I guess this will set debug on Physics tag
+
+# Switching from default cuboid to ball
+
+just set up `colliders="ball"` on RigidBody
+
+# Hull collider

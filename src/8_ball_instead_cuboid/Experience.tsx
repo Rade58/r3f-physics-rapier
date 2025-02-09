@@ -37,7 +37,7 @@ export function Experience() {
 
       <Physics debug>
         {/* SPHERE */}
-        <RigidBody>
+        <RigidBody colliders="ball">
           <mesh position={[-2, 2, 0]} castShadow>
             <sphereGeometry args={[1, 16, 16]} />
             <meshStandardMaterial args={[{ color: "orange" }]} />
@@ -46,13 +46,17 @@ export function Experience() {
 
         {/* COMPOSITE OBJECTS */}
         {/* CUBES */}
-        <RigidBody>
+        <RigidBody
+        //
+        //
+        // colliders="ball"
+        >
           <mesh position={[2, 2, 0]} scale={1.5} castShadow>
             <boxGeometry args={[1, 1, 1]} />
             <meshStandardMaterial color="mediumpurple" />
           </mesh>
-          <mesh position={[4, 2, 0]} scale={1} castShadow>
-            <boxGeometry args={[2, 1, 1]} />
+          <mesh position={[4.2, 2, 0]} scale={1} castShadow>
+            <boxGeometry args={[2.5, 0.5, 2.5]} />
             <meshStandardMaterial color="mediumpurple" />
           </mesh>
         </RigidBody>
