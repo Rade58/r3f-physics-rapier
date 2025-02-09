@@ -20,12 +20,6 @@ import { Vector3 } from "three";
 export function Experience() {
   const cubeBodyRef = useRef<RapierRigidBody>(null);
 
-  /* useEffect(() => {
-    if (cubeBodyRef.current) {
-      console.log(cubeBodyRef.current.collider);
-    }
-  }, []); */
-
   // const someControls = useControls("_", { test: 1 });
 
   // ------------------------------------------------------------
@@ -83,11 +77,13 @@ export function Experience() {
         gravity={[0, -9.81, 0]}
       >
         {/* SPHERE */}
-        <RigidBody colliders="ball" gravityScale={-0.2}>
+        <RigidBody
+          colliders="ball"
+          // gravityScale={-0.2}
+        >
           <mesh
             // position={[-2, 2, 0]}
-            // position={[-2, 8, 0]}
-            position={[-2, 0, 0]}
+            position={[-2, 8, 0]}
             castShadow
           >
             <sphereGeometry args={[1, 16, 16]} />

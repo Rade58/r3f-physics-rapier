@@ -185,3 +185,9 @@ I had problem with changing gravity scale because something internaly happens
 I am able to change gravity scale only few seconds after realod
 
 What happens is that collider wirefram changes color few moments after reload. After it changes color me changing gravity scale doesn't affect anything. **I THINK THIS IS SOME INTERNAL SETTING WHERE GRAVITY IS LOCKED**
+
+## Restitution
+
+Some call this as "control of 'bounciness'"
+
+Default is `0` which means there is no bounce
