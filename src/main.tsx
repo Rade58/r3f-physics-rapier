@@ -11,7 +11,8 @@ import "./index.css";
 // -----------------------------------------------------------
 
 // import { App } from "./5_physics_n_rigid_body/App";
-import { App } from "./6_colliders/App";
+// import { App } from "./6_colliders/App";
+import { App } from "./7_composed_objects/App";
 
 // -----------------------------------------------------------
 
