@@ -155,3 +155,27 @@ applyTorqueImpulse (equivalent of applyImpulse)
 Let's use the applyTorqueImpulse
 
 <https://rapier.rs/docs/api/javascript/JavaScript3D>
+
+# Object settings
+
+You can control friction, restitution, mass, gravity, where the object are, where they are supposed to go, **and much more**
+
+## Gravity
+
+default is `- 9.81`
+
+We can change this on `Physics` tag, like I did
+
+You use **negative values for y**, and x and z should be 0, which makes sens since gravity pulls you down
+
+if you want to create effect where all objects are sucked up to the sky you would set `y` to be positive by some value
+
+or you can change x or z if you want objects to be sucked by these sides
+
+## `gravityScale`
+
+if you want specific rigid body to have different gravity than the rest, you can specify it
+
+you can use negatives to change direction
+
+# YOU CAN ALSO CHANGE GRAVITY AT RUNTIME
