@@ -94,12 +94,6 @@ export function Experience() {
             // position={[-2, 8, 0]}
             position={[-2, 0, 0]}
             castShadow
-            onClick={() => {
-              if (sphereBodyRef.current) {
-                console.log(sphereBodyRef);
-                sphereBodyRef.current.setGravityScale(-1, false);
-              }
-            }}
           >
             <sphereGeometry args={[1, 16, 16]} />
             <meshStandardMaterial args={[{ color: "orange" }]} />

@@ -172,10 +172,16 @@ if you want to create effect where all objects are sucked up to the sky you woul
 
 or you can change x or z if you want objects to be sucked by these sides
 
-## `gravityScale`
+### `gravityScale`
 
 if you want specific rigid body to have different gravity than the rest, you can specify it
 
 you can use negatives to change direction
 
-# YOU CAN ALSO CHANGE GRAVITY AT RUNTIME
+### YOU CAN ALSO CHANGE GRAVITY STUFF AT RUNTIME
+
+I had problem with changing gravity scale because something internaly happens
+
+I am able to change gravity scale only few seconds after realod
+
+What happens is that collider wirefram changes color few moments after reload. After it changes color me changing gravity scale doesn't affect anything. **I THINK THIS IS SOME INTERNAL SETTING WHERE GRAVITY IS LOCKED**
