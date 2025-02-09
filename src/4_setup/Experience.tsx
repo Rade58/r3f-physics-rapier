@@ -47,12 +47,16 @@ export function Experience() {
       {/* FLOOR */}
       <mesh
         receiveShadow
-        rotation={[-Math.PI * 0.5, 0, 0]}
-        scale={10}
-        position-y={-1}
+        // rotation={[-Math.PI * 0.5, 0, 0]}
+        // scale={10}
+        // position-y={-1}
+        position-y={-1.25}
         // visible={false}
       >
-        <planeGeometry />
+        {/* instead of plane */}
+        {/* <planeGeometry /> */}
+        {/* we want box for the floor */}
+        <boxGeometry args={[10, 0.5, 10]} />
         <meshStandardMaterial args={[{ color: "greenyellow" }]} />
       </mesh>
 
