@@ -83,17 +83,17 @@ Go to <https://bruno-simon.com/#debug> to see all colliders on his website
 
 just move car and in lil gui you will see physics; there you can check `modelsVisible`; I guess this will set debug on Physics tag
 
-# Switching from default cuboid to ball
+## Switching from default cuboid to ball
 
 just set up `colliders="ball"` on RigidBody
 
-# Hull collider
+## Hull collider
 
 `colliders="hull"`
 
 It's like putting elastic membrane around object. We tested this with torus
 
-# Trimesh collider
+## Trimesh collider
 
 `colliders="trimesh"`
 
@@ -105,3 +105,23 @@ this is visible with torus and a ball, ball will fall inside torus crevice
 
 Colliders generated with a trimesh are empty on the inside and it makes collision detection more complicated and prone to bugs
 A fast object might get through the trimesh or end up stuck on its surface
+
+<https://rapier.rs/docs/user_guides/rust/colliders/>
+
+# Custom Colliders
+
+make sure to use `colliders={false}`
+
+We nest these in RigidBody tag, and their args array will determine dimensions (we tested bunch of these with our torus)
+
+- BallCollider <https://rapier.rs/javascript3d/classes/Ball.html>
+- CuboidCollider <https://rapier.rs/javascript3d/classes/Cuboid.html>
+- RoundCuboidCollider <https://rapier.rs/javascript3d/classes/Round Cuboid.html>
+- CapsuleCollider <https://rapier.rs/javascript3d/classes/Capsule.html>
+- ConeCollider <https://rapier.rs/javascript3d/classes/Cone.html>
+- CylinderCollider <https://rapier.rs/javascript3d/classes/Cylinder.html>
+- ConvexHullCollider <https://rapier.rs/javascript3d/classes/ConvexPolyhedron.html>
+- TrimeshCollider <https://rapier.rs/javascript3d/classes/TriMesh.html>
+- HeightfieldCollider <https://rapier.rs/javascript3d/classes/Heightfield.html>
+
+avoid setting position and totation on mesh, do it on RigidBody; **this is because you can mess up position and rotation**
