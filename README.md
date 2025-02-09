@@ -146,3 +146,12 @@ And we use reference to apply `impulse`
 - applyImpulse is used to apply a short force for a very short period of time (like for a projectile)
 
 To make something jump, we'd better use applyImpulse
+
+## For rotation, search for `torque`
+
+The keyword for a rotation is torque
+addTorque (equivalent of addForce)
+applyTorqueImpulse (equivalent of applyImpulse)
+Let's use the applyTorqueImpulse
+
+<https://rapier.rs/docs/api/javascript/JavaScript3D>

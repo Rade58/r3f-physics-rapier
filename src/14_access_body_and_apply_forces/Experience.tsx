@@ -35,7 +35,19 @@ export function Experience() {
     // console.log("Click", ev);
 
     if (cubeBodyRef.current) {
-      cubeBodyRef.current.applyImpulse(new Vector3(0, 10, 0), false);
+      cubeBodyRef.current.applyImpulse(
+        // new Vector3(0, 10, 0) // you can also write first parameter like this
+        { x: 0, y: 20, z: 0 },
+
+        // false // it will work just for the first time
+
+        true
+      );
+
+      cubeBodyRef.current.applyTorqueImpulse(
+        { x: 0, y: Math.PI * 0.3, z: 0 },
+        true
+      );
     }
   }
   // ------------------------------------------------------------
