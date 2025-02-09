@@ -191,3 +191,30 @@ What happens is that collider wirefram changes color few moments after reload. A
 Some call this as "control of 'bounciness'"
 
 Default is `0` which means there is no bounce
+
+**Rule of thumb, set same restitution on the floor and the body**, if you want object to bounce to the height it was released from, **so to bounce back to its initail position**
+
+The floor doesn't have a restitution of 1, It's like dropping a bouncing ball on a flat and solid surface against dropping the same bouncing ball on a carpet
+
+---
+
+**didn't try to do this, just explaining**
+
+By default, Rapier will take an average of the two restitution, It is possible to change that rule, but it has to be done within the Collider itself and not the RigidBody
+
+We would need to access the automatically generated collider or create the Collider manually
+We would also need to import CoefficientCombineRule from Rapier and choose one of the rules provided in that object
+
+---
+
+## Friction
+
+Friction lets us decide how much the surfaces are supposed to rub off on each other
+
+default is 0.7
+
+0 would slide infinitely
+
+but you also would need to set friction on the floor to be 0
+
+## Mass

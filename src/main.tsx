@@ -21,7 +21,9 @@ import "./index.css";
 // import { App } from "./13_custom_collider__ball_collider/App";
 // import { App } from "./14_access_body_and_apply_forces/App";
 // import { App } from "./15_gravity/App";
-import { App } from "./16_restitution/App";
+// import { App } from "./16_restitution/App";
+import { App } from "./17_friction/App";
+// import { App } from "./18_mass/App";
 
 // -----------------------------------------------------------
 

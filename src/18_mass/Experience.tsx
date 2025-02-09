@@ -99,7 +99,8 @@ export function Experience() {
           position={[2.5, 3, 0]}
           // rotation-x={Math.PI * 0.1}
           //
-          restitution={1}
+          restitution={0}
+          friction={0.2}
         >
           <mesh castShadow scale={1.6} onClick={clickEventHandler}>
             <boxGeometry args={[1, 1, 1]} />
@@ -110,11 +111,11 @@ export function Experience() {
         {/* FLOOR */}
         <RigidBody
           type="fixed"
-          // restitution={1}
+          // restitution={0.5}
+          friction={0.2}
         >
           <mesh
             receiveShadow
-            // rotation={[-Math.PI * 0.5, 0, 0]}
             // scale={10}
             // position-y={-1}
             position-y={-1.25}
