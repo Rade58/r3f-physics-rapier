@@ -13,6 +13,7 @@ import {
   // CuboidCollider,
   // BallCollider,
   RapierRigidBody,
+  CuboidCollider,
 } from "@react-three/rapier";
 import { ThreeEvent } from "@react-three/fiber";
 import { Vector3 } from "three";
@@ -38,13 +39,10 @@ export function Experience() {
         true
       );
 
-      // rotate it
-      /* cubeBodyRef.current.applyTorqueImpulse(
-        { x: 0, y: Math.PI * 0.3, z: 0 },
-        true
-      ); */
+      const mass = cubeBodyRef.current.mass();
 
-      // or if you want to rotate it randomly
+      console.log("mass", mass);
+
       cubeBodyRef.current.applyTorqueImpulse(
         {
           x: Math.random() * 10,
@@ -81,11 +79,7 @@ export function Experience() {
           colliders="ball"
           // gravityScale={-0.2}
         >
-          <mesh
-            // position={[-2, 2, 0]}
-            position={[-2, 8, 0]}
-            castShadow
-          >
+          <mesh position={[-2, 8, 0]} castShadow>
             <sphereGeometry args={[1, 16, 16]} />
             <meshStandardMaterial args={[{ color: "orange" }]} />
           </mesh>
@@ -94,15 +88,20 @@ export function Experience() {
         {/* CUBE */}
         <RigidBody
           ref={cubeBodyRef}
-          // colliders="cuboid" // default
-          //
           position={[2.5, 3, 0]}
-          // rotation-x={Math.PI * 0.1}
-          //
           restitution={0}
-          friction={0.2}
+          friction={0.7}
+          //
+          colliders={false}
         >
-          <mesh castShadow scale={1.6} onClick={clickEventHandler}>
+          <CuboidCollider
+            args={[0.5, 0.5, 0.5]}
+            // mass={2}
+            // mass={9}
+            mass={4}
+            //
+          />
+          <mesh castShadow onClick={clickEventHandler}>
             <boxGeometry args={[1, 1, 1]} />
             <meshStandardMaterial color="mediumpurple" />
           </mesh>
@@ -112,18 +111,9 @@ export function Experience() {
         <RigidBody
           type="fixed"
           // restitution={0.5}
-          friction={0.2}
+          friction={0.7}
         >
-          <mesh
-            receiveShadow
-            // scale={10}
-            // position-y={-1}
-            position-y={-1.25}
-            // visible={false}
-          >
-            {/* instead of plane */}
-            {/* <planeGeometry /> */}
-            {/* we want box for the floor */}
+          <mesh receiveShadow position-y={-1.25}>
             <boxGeometry args={[10, 0.5, 10]} />
             <meshStandardMaterial args={[{ color: "greenyellow" }]} />
           </mesh>

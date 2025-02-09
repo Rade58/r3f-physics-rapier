@@ -218,3 +218,19 @@ default is 0.7
 but you also would need to set friction on the floor to be 0
 
 ## Mass
+
+The mass of the RigidBody is automatically calculated as the sum of the masses of the Colliders that make up the RigidBody
+
+The mass of the Colliders is automatically calculated according to their shape and volume
+
+big objects will automatically have bigger mass
+
+Contrary to popular belief, the mass won't change how fast an object falls
+
+However the mass will influence the forces involved
+
+If two objects collide while one has a huge mass and the other one has a small mass, the huge mass will push away the small mass
+
+**To chage mass you must creaty collider by yourself**
+
+**You can obtain mass by executing `.mass()` method on rigid body**
