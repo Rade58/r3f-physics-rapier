@@ -108,6 +108,8 @@ A fast object might get through the trimesh or end up stuck on its surface
 
 <https://rapier.rs/docs/user_guides/rust/colliders/>
 
+![some custom collider vizualizations](https://rapier.rs/assets/images/supported_shapes-a5d1235ff41b0c0f38fe34ed6e1b1cce.svg)
+
 # Custom Colliders
 
 make sure to use `colliders={false}`

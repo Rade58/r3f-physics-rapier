@@ -17,7 +17,8 @@ import "./index.css";
 // import { App } from "./9_hull_collider/App";
 // import { App } from "./10_trimesh_collider/App";
 // import { App } from "./11_cutom_collider/App";
-import { App } from "./12_multiple_custom_colliders/App";
+// import { App } from "./12_multiple_custom_colliders/App";
+import { App } from "./13_custom_collider__ball_collider/App";
 
 // -----------------------------------------------------------
 
