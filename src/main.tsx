@@ -10,7 +10,8 @@ import "./index.css";
 // import { App } from "./4_setup/App"; // floor is a box, not a plane
 // -----------------------------------------------------------
 
-import { App } from "./5_physics_n_rigid_body/App"; // floor is a box, not a plane
+// import { App } from "./5_physics_n_rigid_body/App";
+import { App } from "./6_colliders/App";
 
 // -----------------------------------------------------------
 

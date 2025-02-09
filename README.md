@@ -50,3 +50,23 @@ We nest our meshes in Physics tag and we wrap our floor mesh in fixed RigidBody 
 - Three.js objects are automatically associated with the corresponding RigidBody Surrounding them
 - React Three Rapier creates a physics shape matching the Three.js objects
 - We don't have to specify surface properties, object mass, gravity, etc.
+
+## `debug` attribute on Physics tag
+
+you will see shapes of rigid bodies
+
+we use this during development
+
+also you will have a lot of wireframes because of this and thiat can impact performances
+
+The wireframe you can see around rigid body is a collider
+
+for example for our sphere collider will be cube (**cuboid** to be precise) by default (because cubes are default)
+
+cuboids are addaptable (you will see this if you change the scale of the mesh, you will see that cuboid will adapt)
+
+**If you have non cuboid shape, a rectangular shape for example, cuboid will adapt and you will see wireframe encapsulating perfectly that shape**
+
+# Colliders
+
+Shapes that make up our RigidBody

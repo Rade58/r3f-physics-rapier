@@ -45,10 +45,12 @@ export function Experience() {
         </RigidBody>
 
         {/* CUBE */}
-        <mesh position={[2, 2, 0]} scale={1.5} castShadow>
-          <boxGeometry args={[1, 1, 1]} />
-          <meshStandardMaterial color="mediumpurple" />
-        </mesh>
+        <RigidBody>
+          <mesh position={[2, 2, 0]} scale={1.5} castShadow>
+            <boxGeometry args={[1, 1, 1]} />
+            <meshStandardMaterial color="mediumpurple" />
+          </mesh>
+        </RigidBody>
 
         {/* FLOOR */}
         <RigidBody type="fixed">
