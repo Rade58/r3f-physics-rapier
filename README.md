@@ -125,3 +125,7 @@ We nest these in RigidBody tag, and their args array will determine dimensions (
 - HeightfieldCollider <https://rapier.rs/javascript3d/classes/Heightfield.html>
 
 avoid setting position and totation on mesh, do it on RigidBody; **this is because you can mess up position and rotation**
+
+scale isn't supported on the rigid body
+
+**You can also nest multiple custom collodiers in RigidBody**

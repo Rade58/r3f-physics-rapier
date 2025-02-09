@@ -59,13 +59,8 @@ export function Experience() {
           rotation-x={Math.PI * 0.1}
         >
           <CuboidCollider args={[1.2, 1.3, 0.3]} />
-          <mesh
-            //
-            //
-            //
-            //
-            castShadow
-          >
+          <CuboidCollider args={[0.5, 0.5, 2.5]} />
+          <mesh castShadow>
             <torusGeometry args={[1, 0.3, 16, 100]} />
             <meshStandardMaterial color="mediumpurple" />
           </mesh>
