@@ -88,3 +88,11 @@ just move car and in lil gui you will see physics; there you can check `modelsVi
 just set up `colliders="ball"` on RigidBody
 
 # Hull collider
+
+It's like putting elastic membrane around object. We tested this with torus
+
+# Trimesh collider
+
+hull is sometimes not good enough, because "elastic thing" doesn't follow crevice for example
+
+this is visible with torus

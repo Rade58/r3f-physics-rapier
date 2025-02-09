@@ -68,9 +68,10 @@ export function Experience() {
         {/* TORUS */}
         <RigidBody
           // colliders="ball"
-          colliders="hull"
+          // colliders="hull"
+          colliders="trimesh"
         >
-          <mesh position={[0, 0, 0]} castShadow>
+          <mesh position={[0, 0, 0]} rotation-x={Math.PI * 0.5} castShadow>
             <torusGeometry args={[1, 0.3, 16, 100]} />
             <meshStandardMaterial color="mediumpurple" />
           </mesh>
