@@ -30,11 +30,9 @@ export function Experience() {
     // console.log("Click", ev);
 
     if (cubeBodyRef.current) {
-      const mass = cubeBodyRef.current.mass();
-      console.log("mass", mass);
       cubeBodyRef.current.applyImpulse(
         // new Vector3(0, 10, 0) // you can also write first parameter like this
-        { x: 0, y: 5 * mass, z: 0 },
+        { x: 0, y: 5, z: 0 },
 
         // false // it will work just for the first time
 
@@ -43,9 +41,9 @@ export function Experience() {
 
       cubeBodyRef.current.applyTorqueImpulse(
         {
-          x: Math.random() * 10,
-          y: Math.random() * 10,
-          z: Math.random() * 10,
+          x: Math.random() - 0.5,
+          y: Math.random() - 0.5,
+          z: Math.random() - 0.5,
         },
         true
       );
@@ -86,25 +84,30 @@ export function Experience() {
         {/* CUBE */}
         <RigidBody
           ref={cubeBodyRef}
-          position={[2.5, 3, 0]}
           restitution={0}
           friction={0.7}
           //
-          colliders={false}
         >
-          <CuboidCollider
-            args={[0.5, 0.5, 0.5]}
-            // mass={2}
-            mass={9}
-            // mass={4}
-            //
-          />
-          <mesh castShadow onClick={clickEventHandler}>
+          <mesh castShadow position={[3, 3, 0]} onClick={clickEventHandler}>
             <boxGeometry args={[1, 1, 1]} />
             <meshStandardMaterial color="mediumpurple" />
           </mesh>
         </RigidBody>
 
+        {/* ---------------------------------------------------- */}
+        {/* ---------------------------------------------------- */}
+        <RigidBody
+          friction={0}
+          position={[0, -0.8, 0]}
+          type="kinematicPosition"
+        >
+          <mesh castShadow>
+            <boxGeometry args={[0.4, 0.4, 3]} />
+            <meshStandardMaterial color="red" />
+          </mesh>
+        </RigidBody>
+        {/* ---------------------------------------------------- */}
+        {/* ---------------------------------------------------- */}
         {/* FLOOR */}
         <RigidBody
           type="fixed"
@@ -116,8 +119,6 @@ export function Experience() {
             <meshStandardMaterial args={[{ color: "greenyellow" }]} />
           </mesh>
         </RigidBody>
-
-        {/* ---------------------------------------------------- */}
       </Physics>
     </>
   );

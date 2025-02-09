@@ -234,3 +234,43 @@ If two objects collide while one has a huge mass and the other one has a small m
 **To chage mass you must creaty collider by yourself**
 
 **You can obtain mass by executing `.mass()` method on rigid body**
+
+and then you can multiply mass when applying impulse
+
+## Position and rotation (kinematicPosition type and kinematikVelocity type)
+
+So far we have set dynamic and fixed (default) type on RigidBody
+
+you can set position and rotation attributes on RigidBody as you know
+
+But there is a ctach
+
+For dynamic ånd fixed objects (the two types of objects we've covered), **you should not change those values at run time**
+
+Their purpose is only to set the original position and rotation sbefore letting Rapier update the objects
+
+**If you want to move an object, you have to apply forces to it**
+
+If you really need update the object position and rotation directly, there are two options
+
+Option 1: If you need to move it just once
+You can do it with the appropriate methods, but you'll have to reset velocities that are currently applied on it and also make sure to not move it inside another RigidBody
+
+We won't see that here because we will do it in the next workshop
+
+Option 2: If you need to move it in time
+(like a carousel or a moving obstacle)
+
+**You can use the `kinematic` types** that we are going to discover now
+
+But what if we really want to have an object that we can move and rotate?
+It can be the player or it can be a carousel and we don't want to use unpredictable forces
+We want them to move and rotate at an exact speed
+
+We can use `kinematicPosition` and `kinematicVelocity` types
+
+difference between them is how we update them
+
+• For the kinematicPosition, we provide the next position and it'll update the object velocity accordingly
+
+• For the kinematicVelocity, we provide the velocity directly
