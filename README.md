@@ -131,3 +131,18 @@ avoid setting position and totation on mesh, do it on RigidBody; **this is becau
 scale isn't supported on the rigid body
 
 **You can also nest multiple custom collodiers in RigidBody**
+
+# Access body and apply forces
+
+You need refrence, so we will use `useRef` hook with RigidBody
+
+And we use reference to apply `impulse`
+
+**Available methods you can apply on `RapierRigidBody` instance:**
+
+<https://rapier.rs/docs/api/javascript/JavaScript3D> (look for Methods) (try them out and you will be aware what they do so you can apply them in your projects)
+
+- addForce is used to apply a force that lasts for quite a long time (like the wind)
+- applyImpulse is used to apply a short force for a very short period of time (like for a projectile)
+
+To make something jump, we'd better use applyImpulse
