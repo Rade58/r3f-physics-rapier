@@ -26,7 +26,8 @@ import "./index.css";
 // import { App } from "./18_mass/App";
 // import { App } from "./19_kinematic_position_n_velocity/App";
 // import { App } from "./20_events/App";
-import { App } from "./21_from_a_model/App";
+// import { App } from "./21_from_a_model/App";
+import { App } from "./22_stress_test/App";
 
 // -----------------------------------------------------------
 

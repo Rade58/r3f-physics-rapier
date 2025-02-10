@@ -297,3 +297,30 @@ move
 - onWake: when the Rigid Body stops sleeping
 
 # From a model
+
+# Stress test
+
+we are going to use InstancedMesh since we want to make sure that Three.js can handle hundreds of cubes
+
+We will put InstancedMesh inside Physics but it doesn't need to be nested inside Physics
+
+InstancedMesh needs three arguments
+
+- geometry
+- material
+- number of instances
+
+Matrix4 is a combination of position, rotation, and scale
+They are used to move the vertices according to the object transformation When we change the position, rotation, or scale of an object, Three.js will calculate the Matrix4 automatically before rendering it
+
+Here, we need to do it ourselves and there are many different methods available on Matrix4 to do that
+One of them is `compose`, to which we need to send a position (Vector3), a rotation (Quaternion), and a scale (Vector3)
+
+**With `InstancedRigidBodies`:**
+
+Fill the instances array by pushing an object inside for each cube we want
+Each objects needs 3 properties
+
+- key: a random key (used by React)
+- position: an array composed of 3 values for a Vector3 position
+- rotation: an array composed of 3 values for an Euler rotation
