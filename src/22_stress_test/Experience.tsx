@@ -96,7 +96,7 @@ export function Experience() {
   // ------------------------------------------------------------
   // ------------------------------------------------------------
 
-  const cubesCount = 50;
+  const cubesCount = 300;
 
   // no need for this if we are using InstancedRigidBodies tag
   /* const cubes = useRef<InstancedMesh>(null);
@@ -157,7 +157,10 @@ export function Experience() {
       <ambientLight intensity={0.5} />
       {/* ---------------------------------- */}
 
-      <Physics debug gravity={[0, -9.81, 0]}>
+      <Physics
+        // debug
+        gravity={[0, -9.81, 0]}
+      >
         {/* --------------------------------------------------- */}
         {/* --------------------------------------------------- */}
         {/* Invisible walls */}

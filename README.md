@@ -326,3 +326,13 @@ Each objects needs 3 properties
 - rotation: an array composed of 3 values for an Euler rotation
 
 **FOR BETTER PERFORMANCE DON'T FORGET TO DEACTIVATE `debug` ON `Physics` TAG**
+
+# Going further
+
+## We didn't cover Joints
+
+<https://rapier.rs/docs/user_guides/bevy_plugin/joints/>
+
+There is a whole topic about Rapier that we didn't cover
+Joints
+Joints let you create articulations (tentacles, ropes, robot arms, etc.)
