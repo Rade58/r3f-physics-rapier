@@ -24,7 +24,9 @@ import "./index.css";
 // import { App } from "./16_restitution/App";
 // import { App } from "./17_friction/App";
 // import { App } from "./18_mass/App";
-import { App } from "./19_kinematic_position_n_velocity/App";
+// import { App } from "./19_kinematic_position_n_velocity/App";
+// import { App } from "./20_events/App";
+import { App } from "./21_from_a_model/App";
 
 // -----------------------------------------------------------
 

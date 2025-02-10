@@ -281,3 +281,19 @@ The kinematic object has two important functions
 in our example we will use useFrame
 
 we will create threejs Euler and Quaternion, and send that Quoterninon to `setNextKinematicRotation` call
+
+# Events
+
+4 different events
+
+- onCollisionEnter: When the Rigidbody hit something
+- onCollisionExit: when the Rigid Body separates from the object it just hit
+
+When an object stops moving for a moment, Rapier will consider it as sleeping and won't update it unless it collides with something else or we call a function like applyImpulse on it
+This improves performance since Rapier won't have to test objects that don't
+move
+
+- onSleep: when the RigidBody starts sleeping
+- onWake: when the Rigid Body stops sleeping
+
+# From a model
