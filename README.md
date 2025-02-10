@@ -324,3 +324,5 @@ Each objects needs 3 properties
 - key: a random key (used by React)
 - position: an array composed of 3 values for a Vector3 position
 - rotation: an array composed of 3 values for an Euler rotation
+
+**FOR BETTER PERFORMANCE DON'T FORGET TO DEACTIVATE `debug` ON `Physics` TAG**
